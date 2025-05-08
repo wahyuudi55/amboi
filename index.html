@@ -1,0 +1,775 @@
+<html lang="en">
+ <head>
+ <link rel="icon" href="https://files.catbox.moe/2x1c8h.jpg" type="image/png">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   whyuxD website
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+
+<script>
+  window.onload = function () {
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Latar gelap transparan */
+      z-index: 998; /* Overlay di bawah pop-up */
+      backdrop-filter: blur(3px); /* Efek blur */
+    `;
+    document.body.appendChild(overlay);
+    Swal.fire({
+      title: '<strong>Welcome to Website whyuxD</strong>',
+      html: '<p style="margin-top: 10px;">sudah tersedia fitur api!</p>',
+      imageUrl: 'https://files.catbox.moe/55jlfp.jpg',
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: 'whyuxD',
+      showConfirmButton: true,
+      confirmButtonText: 'OK',
+      background: 'rgba(255, 255, 255, 0.95)', /* Pop-up tetap putih */
+      customClass: {
+        popup: 'swal-custom-popup',
+        confirmButton: 'swal-custom-btn',
+      },
+      didOpen: () => {
+        const popup = document.querySelector('.swal2-popup');
+        popup.style.zIndex = '9999';
+        popup.style.animation = 'popupFadeIn 0.5s ease-out';
+      },
+      willClose: () => {
+        const popup = document.querySelector('.swal2-popup');
+        popup.style.animation = 'popupFadeOut 0.5s ease-in';
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            document.body.removeChild(overlay); 
+            resolve();
+          }, 500); 
+        });
+      },
+    });
+  };
+  const style = document.createElement('style');
+  style.innerHTML = `
+    #overlay {
+      backdrop-filter: blur(3px); /* Efek blur */
+    }
+
+    .swal-custom-popup {
+      border-radius: 20px !important; /* Membulatkan sudut */
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5) !important;
+      padding: 20px !important;
+    }
+    @keyframes popupFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes popupFadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    }
+    .swal-custom-btn {
+      background-color: #4a4a4a !important; /* Abu-abu gelap */
+      color: white !important;
+      border-radius: 10px !important;
+      padding: 10px 20px !important;
+      transition: all 0.3s ease;
+    }
+
+    .swal-custom-btn:hover {
+      background-color: #333 !important; /* Abu-abu lebih gelap */
+      transform: scale(1.1);
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e5e5e5;
+        }
+        .badge {
+            background-color: #2c2c2c;
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            margin: 0.25rem;
+        }
+        .badge i {
+            margin-right: 0.5rem;
+        }
+        .card {
+            background-color: #2c2c2c;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card i {
+            margin-right: 0.5rem;
+        }
+  </style>
+ </head>
+ 
+ <body class="flex flex-col items-center p-4">
+  <div class="w-full max-w-md">
+   <div class="relative w-full h-48">
+    <video class="w-full h-full object-cover rounded-t-lg" autoplay loop muted>
+      <source src="https://files.catbox.moe/iz5m5i.mp4" type="video/mp4" />
+      Your browser does not support the video tag
+    </video>
+   </div>
+</div>
+
+   <div class="relative -mt-12 flex justify-center">
+    <img alt="whyuxD" class="w-24 h-24 rounded-full border-4 border-gray-900" height="100" src="https://img100.pixhost.to/images/821/541972619_a6821eda.jpg" width="100"/>
+   </div>
+   <div class="text-center mt-4">
+    <h1 class="text-2xl font-bold">
+     whyuxD
+     <i class="fas fa-check-circle text-blue-500">
+     </i>
+    </h1>
+    <p class="text-xs text-gray-400">
+  ムハンマド・ワヒディ
+    </p>
+   </div>
+   
+   <div class="flex flex-wrap justify-center mt-4">
+  <a class="badge cursor-pointer hover:bg-gray-700 transition-all">
+    <i class="fas fa-tv text-blue-500"></i>
+    <span class="ml-2">
+      clan
+    </span>
+  </a>
+
+<a class="badge cursor-pointer hover:bg-gray-700 transition-all" id="showGame">
+  <i class="fas fa-gamepad text-red-500"></i>
+  <span class="ml-2">Game</span>
+</a>
+
+<div id="gameOverlay" style="display: none; position: fixed; top: 30%; left: 10%; right: 10%; background-color: rgba(255, 255, 255, 0.9); z-index: 9999; text-align: center; padding: 10px;">
+    <div id="gameContainer" style="width: 90%; height: 180px; margin: 0 auto; background-color: white; border-radius: 10px; padding: 10px; position: relative; background-image: url('background-image.jpg'); background-size: cover;">
+    <button id="startButton" style="position: absolute; left: 10px; bottom: 10px; padding: 5px 10px; cursor: pointer; font-size: 12px; background-color: rgba(0, 0, 0, 0.6); color: white; border-radius: 5px;">Play</button>
+    <button id="jumpButton" style="position: absolute; right: 10px; bottom: 10px; padding: 5px 10px; cursor: pointer; font-size: 12px; background-color: rgba(0, 0, 0, 0.6); color: white; border-radius: 5px;">Lompat</button>
+    <button id="stopButton" style="position: absolute; left: 80px; bottom: 10px; padding: 5px 10px; cursor: pointer; font-size: 12px; background-color: rgba(0, 0, 0, 0.6); color: white; border-radius: 5px;">Stop</button>
+    <canvas id="dinoGame" width="250" height="120" style="background-color: #f0f0f0;"></canvas>
+  </div>
+  <button id="closeGame" style="position: absolute; top: -10px; right: -10px; font-size: 12px; padding: 5px 10px; background-color: red; color: white; border-radius: 8px; cursor: pointer; border: none;">X</button>
+</div>
+
+<script>
+  const showGameBtn = document.getElementById("showGame");
+  const gameOverlay = document.getElementById("gameOverlay");
+  const startButton = document.getElementById("startButton");
+  const jumpButton = document.getElementById("jumpButton");
+  const stopButton = document.getElementById("stopButton");
+  const closeGameBtn = document.getElementById("closeGame");
+
+  let gameInterval;
+  let isPlaying = false;
+  let isPaused = false;
+
+  const backsound = new Audio("https://files.catbox.moe/d2nlvt.mp3");
+  backsound.loop = true;
+
+  showGameBtn.addEventListener("click", () => {
+    gameOverlay.style.display = "block";
+    backsound.play(); 
+  });
+
+  closeGameBtn.addEventListener("click", () => {
+    gameOverlay.style.display = "none";
+    backsound.pause(); 
+    backsound.currentTime = 0; 
+    stopGame(); 
+  });
+
+  startButton.addEventListener("click", () => {
+    if (!isPlaying) {
+      startGame();
+      startButton.style.display = "none"; 
+    }
+  });
+
+  stopButton.addEventListener("click", togglePause);
+
+  function startGame() {
+    isPlaying = true;
+    isPaused = false;
+
+    const canvas = document.getElementById("dinoGame");
+    const ctx = canvas.getContext("2d");
+
+    let dino = { x: 20, y: 100, width: 15, height: 15, vy: 0, jump: -8, gravity: 0.5 };
+    let cactus = { x: 250, y: 100, width: 15, height: 15, speed: 4 };
+    let score = 0;
+    let isJumping = false;
+    let gameOver = false;
+
+    function drawDino() {
+      ctx.fillStyle = "black";
+      ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+    }
+
+    function drawCactus() {
+      ctx.fillStyle = "green";
+      ctx.fillRect(cactus.x, cactus.y, cactus.width, cactus.height);
+    }
+
+    function drawScore() {
+      ctx.fillStyle = "black";
+      ctx.font = "16px Arial";
+      ctx.fillText(`Score: ${score}`, 10, 20);
+    }
+
+    function drawGameOver() {
+      ctx.fillStyle = "red";
+      ctx.font = "20px Arial";
+      ctx.fillText("Game Over!", 80, 70);
+    }
+
+    function updateDino() {
+      dino.y += dino.vy;
+      dino.vy += dino.gravity;
+
+      if (dino.y > 100) {
+        dino.y = 100;
+        dino.vy = 0;
+        isJumping = false;
+      }
+    }
+
+    function updateCactus() {
+      cactus.x -= cactus.speed;
+      if (cactus.x + cactus.width < 0) {
+        cactus.x = 250;
+        score++;
+      }
+    }
+
+    function detectCollision() {
+      return (
+        dino.x < cactus.x + cactus.width &&
+        dino.x + dino.width > cactus.x &&
+        dino.y < cactus.y + cactus.height &&
+        dino.y + dino.height > cactus.y
+      );
+    }
+
+    function gameLoop() {
+      if (isPaused) return;
+
+      if (gameOver) {
+        drawGameOver();
+
+        clearInterval(gameInterval);
+        isPlaying = false;
+        startButton.style.display = "block"; // Tampilkan tombol Play Again
+        return;
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      drawDino();
+      drawCactus();
+      drawScore();
+
+      updateDino();
+      updateCactus();
+
+      if (detectCollision()) {
+        gameOver = true;
+      }
+    }
+
+    jumpButton.addEventListener("click", () => {
+      if (!isJumping) {
+        dino.vy = dino.jump;
+        isJumping = true;
+      }
+    });
+
+    gameInterval = setInterval(() => {
+      gameLoop();
+    }, 1000 / 60);
+  }
+
+  function togglePause() {
+    isPaused = !isPaused;
+    stopButton.textContent = isPaused ? "Resume" : "Stop";
+  }
+
+  function stopGame() {
+    clearInterval(gameInterval);
+    isPlaying = false;
+    startButton.style.display = "block"; 
+  }
+</script>
+  
+<a id="generate-btn" class="badge cursor-pointer hover:bg-gray-700 transition-all">
+  <i class="fas fa-image text-cyan-500"></i>
+  <span class="ml-2">
+    to image
+  </span>
+</a>
+
+<div id="prompt-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); width: 400px;">
+  <label for="prompt-input" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 18px; color: #2c3e50; text-align: left; margin-left: 15px;">Masukkan Prompt:</label>
+  <textarea id="prompt-input" rows="5" style="width: calc(100% - 30px); padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #34495e; margin-bottom: 15px; resize: none; margin-left: 15px;"></textarea>
+  <div style="text-align: center;">
+    <button id="close-btn" style="background: #e74c3c; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; margin-right: 10px;">Close</button>
+    <button id="submit-btn" style="background: #1abc9c; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; margin-left: 10px;">Generate</button>
+  </div>
+  <p id="wait-message" style="display: none; text-align: center; margin-top: 10px; color: #e67e22; font-size: 14px;">
+    Wait 30 seconds...
+    <span id="loading-spinner" style="display: inline-block; width: 16px; height: 16px; border: 3px solid #e67e22; border-top: 3px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-left: 10px;"></span>
+  </p>
+</div>
+
+<div id="result" style="margin-top: 20px; text-align: center;"></div>
+
+<script>
+  // Tombol dan elemen lainnya
+  const generateBtn = document.getElementById('generate-btn');
+  const promptModal = document.getElementById('prompt-modal');
+  const promptInput = document.getElementById('prompt-input');
+  const submitBtn = document.getElementById('submit-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const resultContainer = document.getElementById('result');
+  const waitMessage = document.getElementById('wait-message');
+  const loadingSpinner = document.getElementById('loading-spinner');
+  generateBtn.addEventListener('click', () => {
+    promptModal.style.display = 'block';
+  });
+   closeBtn.addEventListener('click', () => {
+    promptModal.style.display = 'none';
+    promptInput.value = ''; // Reset input
+  });
+  submitBtn.addEventListener('click', async () => {
+    const prompt = promptInput.value.trim();
+    if (!prompt) {
+      alert('Prompt tidak boleh kosong!');
+      return;
+    }
+
+    try {
+      waitMessage.style.display = 'block';
+
+      const response = await fetch(`https://api.ryzendesu.vip/api/ai/v2/text2img?prompt=${encodeURIComponent(prompt)}&model=`, {
+        method: 'GET',
+      });
+
+      if (!response.ok) throw new Error('Gagal memuat gambar, coba ubah prompt!');
+
+      const blob = await response.blob(); // Dapatkan respons sebagai biner
+      const imageUrl = URL.createObjectURL(blob); // Konversi ke URL
+
+      resultContainer.innerHTML = `
+        <div style="display: inline-block; padding: 15px; border: 3px solid #2c3e50; border-radius: 10px; background: #ecf0f1; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+          <p style="font-weight: bold; font-size: 18px; color: #2c3e50;">Hasil gambar dari prompt: "${prompt}"</p>
+          <img src="${imageUrl}" alt="Generated Image" style="max-width: 100%; border-radius: 5px; margin-bottom: 15px;">
+          <div style="text-align: center;">
+            <button id="close-result" style="background: #e74c3c; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; margin-left: 10px;">Close</button>
+            <a href="${imageUrl}" download="generated_image.jpg" style="background: #1abc9c; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; text-decoration: none;">Download</a>
+          </div>
+          <p style="font-size: 12px; color: #7f8c8d; margin-top: 10px;">by whyuxD-X</p>
+        </div>
+      `;
+
+      document.getElementById('close-result').addEventListener('click', () => {
+        resultContainer.innerHTML = '';
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Gagal memuat gambar. Silakan coba lagi!');
+    } finally {
+      waitMessage.style.display = 'none';
+      promptModal.style.display = 'none';
+      promptInput.value = ''; // Reset input
+    }
+  });
+</script>
+
+<style>
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+  
+<a id="darkAiButton" class="badge cursor-pointer hover:bg-gray-700 transition-all flex items-center">
+  <i class="fas fa-robot text-gray-400">
+  </i>
+  <span class="ml-2">
+    Dark Ai
+  </span>
+</a>
+<div id="darkAiChat" class="hidden fixed inset-0 bg-white z-50 flex flex-col">
+  <div class="flex items-center justify-between p-4 bg-gray-800 text-white">
+    <h2 class="text-lg font-bold">
+      Dark Ai Chat
+      </h2>
+    <button id="closeChat" class="text-red-500 font-semibold hover:underline">
+      Tutup
+    </button>
+  </div>
+
+  <div id="chatContainer" class="flex-1 p-4 overflow-y-auto bg-gray-100 space-y-4"></div>
+
+  <div class="p-4 bg-white border-t flex">
+    <input
+      id="userMessage"
+      type="text"
+      placeholder="Kirim pesan ke Dark"
+      class="flex-1 p-2 border rounded-l-md text-black"
+    />
+    <button
+      id="sendMessage"
+      class="bg-blue-500 text-white px-4 rounded-r-md hover:bg-blue-600 transition-all">
+      send
+    </button>
+  </div>
+</div>
+
+<script>
+  const darkAiButton = document.getElementById('darkAiButton');
+  const darkAiChat = document.getElementById('darkAiChat');
+  const closeChatButton = document.getElementById('closeChat');
+  const userMessageInput = document.getElementById('userMessage');
+  const sendMessageButton = document.getElementById('sendMessage');
+  const chatContainer = document.getElementById('chatContainer');
+
+  darkAiButton.addEventListener('click', () => {
+    darkAiChat.classList.remove('hidden');
+    userMessageInput.focus();
+  });
+
+  closeChatButton.addEventListener('click', () => {
+    darkAiChat.classList.add('hidden');
+  });
+
+  function addMessage(message, isUser = true) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add(
+      'px-3',
+      'py-2',
+      'rounded-lg',
+      'max-w-xs',
+      'break-words',
+      'w-fit'
+    );
+
+    if (isUser) {
+      messageElement.classList.add(
+        'self-end',
+        'bg-blue-500',
+        'text-white',
+        'ml-auto'
+      );
+    } else {
+      messageElement.classList.add(
+        'self-start',
+        'bg-gray-300',
+        'text-gray-700',
+        'mr-auto'
+      );
+    }
+
+    messageElement.textContent = message;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const userMessage = userMessageInput.value.trim();
+    if (!userMessage) return;
+
+    addMessage(userMessage, true);
+    userMessageInput.value = '';
+
+    addMessage('sedang mengetik...', false);
+
+    try {
+      const response = await fetch(`https://api.nyxs.pw/ai/character-ai?prompt=${userMessage}&gaya=kamu adalah Darkbot yang biasa di panggil dark, kamu buatan whyuxD, dan sifat mu adalah tsundere`);
+      const data = await response.json();
+      
+      const botReply = data.result || 'Maaf, dark sedang error!..';
+
+      chatContainer.lastChild.textContent = botReply;
+    } catch (error) {
+     chatContainer.lastChild.textContent =
+        'Terjadi kesalahan saat merespon. Coba lagi nanti';
+      console.error('Error:', error);
+    }
+  }
+
+  sendMessageButton.addEventListener('click', sendMessage);
+
+  userMessageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+</script>
+
+   </div>
+   <div class="flex justify-center mt-4 space-x-4">
+     <a href="https://wa.me/6287862115557?text=halo+min+:)" target="_blank">
+    <p class="text-green-500" href="#">
+     <i class="fab fa-whatsapp">
+       owner
+     </i>
+    </p>
+    </a>
+   </div>
+   
+<div class="flex justify-center mt-4 space-x-4">
+  <a href="#" id="toggleApiButton">
+    <p class="text-red-600 font-bold text-lg flex items-center space-x-2">
+      <i class="fas fa-fire-alt"></i>
+      <span>api's</span>
+    </p>
+  </a>
+</div>
+<div id="additionalButtons" class="flex flex-col justify-center mt-4 space-y-2" style="display: none; opacity: 0; transform: translateY(-20px); transition: all 0.5s ease-in-out; width: 100%;">
+  <!-- AI Button -->
+  <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-full shadow-lg text-lg font-medium transition-all w-full text-center" id="aiButton">
+    <i class="fas fa-robot"> artificial intelligence </i>
+  </a>
+  <div id="aiSubButtons" class="flex flex-col justify-center mt-2 space-y-0" style="display: none;">
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/ai/logic-detect?text=buatkan saya gambar samurai anime"> detect logic </a>
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/ai/chai?text=siapa kamu&gaya=jawab dengan tsundere, kalau kamu adalh Dark Ai"> character ai</a>
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/ai/web-html?text=halaman tentang kopi dan cara budidayanya"> detect logic </a>
+  </div>
+  
+  <!-- Tools Button -->
+  <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-full shadow-lg text-lg font-medium transition-all w-full text-center" id="toolsButton">
+    <i class="fas fa-tools"> tools</i> </a>
+  <div id="toolsSubButtons" class="flex flex-col justify-center mt-2 space-y-0" style="display: none;">
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/tools/ssweb?url=https://whyuxD.neocities.org"> ssweb </a>
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/tools/brat?text=saya whyuxDev"> brat </a>
+  </div>
+
+  <!-- Search Button -->
+  <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-full shadow-lg text-lg font-medium transition-all w-full text-center" id="searchButton">
+    <i class="fas fa-search"> search </i> </a>
+  <div id="searchSubButtons" class="flex flex-col justify-center mt-2 space-y-0" style="display: none;">
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/search/pin?prompt=https:anime"> pinterest </a>
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/search/lirik?lagu=Imagine"> lirik </a>
+  </div>
+
+  <!-- Random Button -->
+  <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-full shadow-lg text-lg font-medium transition-all w-full text-center" id="randomButton">
+    <i class="fas fa-cubes"> random </i> </a>
+  <div id="randomSubButtons" class="flex flex-col justify-center mt-2 space-y-0" style="display: none;">
+    <a class="collapse-item text-white bg-black hover:bg-gray-800 px-2 py-1 rounded-full shadow-sm text-xs font-medium transition-all w-max mx-auto" target="_blank" href="/api/random/meme"> meme </a>
+  </div>
+</div>
+<script>
+  document.getElementById('toggleApiButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    const additionalButtons = document.getElementById('additionalButtons');
+    if (additionalButtons.style.display === 'none' || additionalButtons.style.display === '') {
+      additionalButtons.style.display = 'flex';
+      setTimeout(() => {
+        additionalButtons.style.opacity = 1;
+        additionalButtons.style.transform = 'translateY(0)';
+      }, 10);
+    } else {
+      additionalButtons.style.opacity = 0;
+      additionalButtons.style.transform = 'translateY(-20px)';
+      setTimeout(() => {
+        additionalButtons.style.display = 'none';
+      }, 500);
+    }
+  });
+  function toggleSubButtons(mainButtonId, subButtonId) {
+    document.getElementById(mainButtonId).addEventListener('click', function(event) {
+      event.preventDefault();
+      const subButtons = document.getElementById(subButtonId);
+      
+      if (subButtons.style.display === 'none' || subButtons.style.display === '') {
+        subButtons.style.display = 'flex';
+        setTimeout(() => {
+          subButtons.style.opacity = 1;
+          subButtons.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        subButtons.style.opacity = 0;
+        subButtons.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          subButtons.style.display = 'none';
+        }, 300);
+      }
+    });
+  }
+  toggleSubButtons('aiButton', 'aiSubButtons');
+  toggleSubButtons('toolsButton', 'toolsSubButtons');
+  toggleSubButtons('searchButton', 'searchSubButtons');
+  toggleSubButtons('randomButton', 'randomSubButtons');
+</script>
+   
+
+   <div class="mt-4">
+    <div class="card">
+  <a href="https://chat.whatsapp.com/I0BAZxGYlrE5jFHiAOr14U" target="_blank" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all">
+    <i class="fas fa-comment text-white">
+    </i>
+    <span>
+      Join my group
+    </span>
+    <i class="fas fa-arrow-right text-gray-500">
+    </i>
+  </a> 
+</div>
+    <div class="card">
+  <a href="https://whatsapp.com/channel/0029Van6ItnIyPtYQU3k0z3s" target="_blank" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all">
+    <i class="fas fa-dove text-white">
+    </i>
+    <span>
+      Saluran WhatsApp
+    </span>
+    <i class="fas fa-arrow-right text-gray-500">
+    </i>
+  </a>
+</div>
+<div class="card">
+  <a href="https://www.mediafire.com/file/lva294beolblhua/DarkBot%2528share%2529.zip/file" target="_blank" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all">
+    <i class="fas fa-fire text-orange-500"></i>
+    <span>
+      sc DarkBot new! 
+      </span>
+    <span class="text-sm text-gray-400">klik disini..</span>
+    <i class="fas fa-arrow-right text-gray-500 ml-auto"></i>
+  </a>
+</div>
+<div class="card">
+  <a href="https://www.mediafire.com/file/ml5cj8hs6459g79/lizard+0.0.3.zip/file" target="_blank" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all">
+    <i class="fas fa-fire text-orange-500"></i>
+    <span>
+      sc LizardBot 
+      </span>
+    <span class="text-sm text-gray-400">klik disini..</span>
+    <i class="fas fa-arrow-right text-gray-500 ml-auto"></i>
+  </a>
+</div>
+   </div>
+   <div class="text-center mt-4">
+<p style="font-family: 'Roboto Mono', monospace; font-weight: 500;">
+  no kiss no hug, only fix and bug
+</p>
+
+<div class="flex items-center justify-center mt-2">
+  <button id="playlistButton" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+    <i class="fab fa-spotify text-green-500">
+   </i>
+    
+    <span class="ml-2">
+  click here to playlist
+</span>
+</button>
+</div>
+<div id="playlistContent" class="mt-2 text-gray-400 hidden" style="font-family: 'Poppins', sans-serif;">
+  <ul class="list-disc ml-6 space-y-1">
+    <li>juice wrld</li>
+    <li>lil uzi</li>
+    <li>lil tjay</li>
+    <li>lil tecca</li>
+    <li>ardy minaj</li>
+    <li>neck deep</li>
+    <li>xxxtentaction</li>
+  </ul>
+</div>
+
+<script>
+  document.getElementById('playlistButton').addEventListener('click', () => {
+    const content = document.getElementById('playlistContent');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      content.style.maxHeight = content.scrollHeight + "px"; // Animate expanding
+    } else {
+      content.style.maxHeight = 0;
+      setTimeout(() => content.classList.add('hidden'), 300); // Hide after animation
+    }
+  });
+</script>
+
+<style>
+  #playlistContent {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+</style>
+
+<div class="w-full max-w-md">
+  <div class="relative w-full h-48">
+    <div class="flex items-center justify-center space-x-4">
+      <button id="playPauseBtn" class="flex items-center space-x-2 cursor-pointer hover:bg-gray-700 p-2 rounded-lg transition-all">
+        <i class="fas fa-play text-green-500"></i>  <!-- Icon play -->
+        <span class="ml-2">
+          play backsound
+          </span>
+      </button>
+    </div>
+    <audio id="audioPlayer" class="hidden" preload="auto">
+      <source src="https://files.catbox.moe/qehpgo.mp3" type="audio/mp3">
+      Your browser does not support the audio tag
+    </audio>
+  </div>
+</div>
+
+<script>
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const audioPlayer = document.getElementById('audioPlayer');
+  const playIcon = playPauseBtn.querySelector('i');
+
+  playPauseBtn.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      playIcon.classList.remove('fa-play');
+      playIcon.classList.add('fa-pause');
+    } else {
+      audioPlayer.pause();
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+    }
+  });
+</script>
+ 
+ <a class="text-orange-200" href="#">
+  ◈ ᴡʜʏᴜxᴅ
+    </a>
+   </div>
+  </div>
+ </body>
+</html>
